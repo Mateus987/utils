@@ -8,18 +8,18 @@ app = Flask(__name__)
 @app.route("/redirect")
 def gateway():
     # Gerar um session_id aleatório sem traços
-    session_id = str(uuid.uuid4()).replace("-", "")
+    session_id = str(uuid.uuid4()).replace("-", "")[0:17]
 
     # Endpoint da API
-    url = "https://www.futfanatics.com.br/web_api/cart/"
+    url = "https://www.deolanebeauty.com.br/web_api/cart/"
 
     # Payload para criar o carrinho com o produto
     payload = {
         "Cart": {
             "session_id": session_id,
-            "product_id": "165697",   # ID do produto
+            "product_id": "38625687",   # ID do produto/kit
             "quantity": "1",          # Quantidade
-            "variant_id": "2152337"   # Variante do produto
+                                    
         }
     }
 
@@ -35,7 +35,7 @@ def gateway():
     print("Resposta da API:", response.text)
 
     # Redirecionar para o carrinho do cliente com o session_id
-    redirect_url = f"https://www.futfanatics.com.br/checkout/cart?session_id={session_id}&store_id=311840&iniSession=1#carrinho"
+    redirect_url = f"https://www.deolanebeauty.com.br/checkout/cart?session_id={session_id}&store_id=1374713&iniSession=1#carrinho"
     return redirect(redirect_url)
 
 
