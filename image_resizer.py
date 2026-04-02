@@ -2,23 +2,20 @@ from PIL import Image
 import os
 
 # Configurações
-image_path = "gemini.png"  # coloque o caminho/nome da imagem
-output_path = "minha_imagem_redimensionada.png"  # nome da imagem redimensionada
-new_width = 1368  # largura desejada
-new_height = 1000  # altura desejada, deixe None para manter proporção
+image_path = "icon512x512.png"
+output_path = "minha_imagem_redimensionada.png"
+new_width = 700
+new_height = 700  # deixe None para manter proporção
 
-# Função para redimensionar mantendo proporção se altura for None
 def resize_image(image_path, output_path, width, height=None):
     img = Image.open(image_path)
     
     if height is None:
-        # Mantém proporção
         w_percent = (width / float(img.size[0]))
         height = int((float(img.size[1]) * float(w_percent)))
     
-    img = img.resize((width, height), Image.ANTIALIAS)
+    img = img.resize((width, height), Image.Resampling.LANCZOS)
     img.save(output_path)
     print(f"Imagem salva: {output_path}")
 
-# Executa o redimensionamento
 resize_image(image_path, output_path, new_width, new_height)
