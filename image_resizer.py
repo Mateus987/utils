@@ -2,7 +2,7 @@ from PIL import Image
 import os
 
 # Configurações
-image_path = "icon512x512.png"
+image_path = "contabate.png"
 output_path = "minha_imagem_redimensionada.png"
 new_width = 700
 new_height = 700  # deixe None para manter proporção
