@@ -26,7 +26,7 @@ def download_video_from_url(url, output_path='.'):
 
 # Exemplo de uso
 video_urls = [
-    "https://www.youtube.com/watch?v=8wsgLaGUW7s"
+    "https://www.youtube.com/watch?v=v6cZSeZMVyA"
 ]
 
 download_directory = "./downloaded_videos"
