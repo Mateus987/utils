@@ -5,7 +5,7 @@ import os
 image_path = "contabate.png"
 output_path = "minha_imagem_redimensionada.png"
 new_width = 700
-new_height = 700  # deixe None para manter proporção
+new_height = 700 
 
 def resize_image(image_path, output_path, width, height=None):
     img = Image.open(image_path)
